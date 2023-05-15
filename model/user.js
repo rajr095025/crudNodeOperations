@@ -16,7 +16,7 @@ var schema = new mongoose.Schema({
     },
     phone: String,
 });
-
+        
 var user = new mongoose.model('User', schema);
 
 module.exports = user;
