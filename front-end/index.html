@@ -3,20 +3,24 @@
 <html lang="en">
   <head>
     <title>Fetch API</title>
-    <link href="./style.css">
+    <link rel="stylesheet" href="./style.css">
   </head>
   <body>
+    <div class="main">
     <div>
       <h1>User Management System</h1>
     </div>
-    <div class="findAll">
-      <h3>Getting All Users List from database</h3>
+    <div class="find-all">
+      <h3 style="text-align: center;">Getting All Users List from database</h3>
       <!-- Table to display fetched user data -->
-      <table id="users" style="border: black;"></table>
+      <table id="users" ></table>
     </div>
-    <div>
+
+
+    <div class="post-user">
       <h3>Adding user to Database</h3>
-      <form method="post" action="http://localhost:3000/user/">
+      <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+      <form method="post" action="http://localhost:3000/user/" target="dummyframe">
           
           <label>Email</label><br>
           <input type="text" name="email"><br><br>
@@ -30,14 +34,41 @@
           <label>Phone</label><br>
           <input type="number" name="phone"><br><br>
 
-          <button type="submit">Submit</button><br>
+          <button type="submit" id="post-button">Submit</button><br>
       </form>
     </div>
-    <div>
+
+
+    <div class="get-user">
       <h3>Getting user with particular Id</h3>
-      <p>Enter User DB id</p>   
-      <input type="number" name="id">
+      <p></p>   
+      <form id="form">
+        <label for="post">Enter User DB id</label>
+        <br><br>
+        <textarea name="post" id="input" cols="25" rows="1"></textarea>
+        <br> <br>
+        <div id="msg"></div>
+        <button type="submit">Get</button>
+      </form>
+      <div class="inputId"></div>
       <div id="userDetails"></div>
+    </div>
+
+
+
+    <div class="delete-user">
+      <h3>Deleting user with particular Id</h3>
+      <form id="formDelete">
+        <label for="delete">Enter User DB id</label>
+        <br><br>
+        <textarea name="delete" id="inputDelete" cols="25" rows="1"></textarea>
+        <br> <br>
+        <div id="msg"></div>
+        <button type="submit">Delete</button>
+      </form>
+      <div class="inputId"></div>
+      <div id="deletedMessage"></div>
+    </div>
     </div>
       
     <!-- Link JavaScript file -->
