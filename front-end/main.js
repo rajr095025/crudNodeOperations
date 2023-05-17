@@ -88,6 +88,52 @@ function deleteUser(inputValue) {
     });
 }
 
+
+
+// updating existing user
+let updateForm = document.getElementById("update-form");
+updateForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  let userId = document.getElementById("update-user-id");
+  let email = document.getElementById("update-email");
+  let firstName = document.getElementById("update-first-name");
+  let lastName = document.getElementById("update-last-name");
+  let phone = document.getElementById("update-phone");
+  let updateMessage = document.getElementById("update-message");
+
+  if (userId.value == "" || email.value == "") {
+    updateMessage.innerHTML = 'User Id and email cannot be null';
+    // throw error
+  } else {
+    // perform operation with form input
+    console.log(userId.value +" "+ email.value+" "+ firstName.value+" "+lastName.value+" "+phone.value+" ");
+    updateUser();
+    function updateUser() {
+      fetch(`http://localhost:3000/user/${userId.value}`, {
+        method: 'PATCH',
+        body: JSON.stringify({
+          email: `${email.value}`,
+          firstName : `${firstName.value}`,
+          lastName : `${lastName.value}`,
+          phone : `${phone.value}`
+        }),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      })
+        // Converting received data to JSON
+        .then((response) => response.json())
+        .then((json) => {
+          // Create a variable to store HTML
+          console.log(json.message);
+          updateMessage.innerHTML = `<p>${json.message}<p>`;
+        });
+        getAll();
+    }
+  }
+});
+
 // POST request using fetch()
 // fetch("https://jsonplaceholder.typicode.com/posts", {
 

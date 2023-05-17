@@ -14,9 +14,6 @@ th{
     font-weight: bolder
 
 }
-tr{
-    color:;
-}
 
 .main{
     display: flex;
@@ -38,5 +35,9 @@ tr{
 }
 
 .delete-user{
+    margin-bottom: 50px;
+}
+
+.update-user{
     margin-bottom: 50px;
 }

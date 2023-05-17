@@ -55,7 +55,7 @@
     </div>
 
 
-
+    
     <div class="delete-user">
       <h3>Deleting user with particular Id</h3>
       <form id="formDelete">
@@ -69,8 +69,31 @@
       <div class="inputId"></div>
       <div id="deletedMessage"></div>
     </div>
+    <div class="update-user">
+      <h3>Updating existing user in Database</h3>
+      <form action="" id="update-form">
+          <label>Enter User ID</label><br>
+          <input type="text" name="__id" id="update-user-id"><br><br>
+
+          <label>Email</label><br>
+          <input type="text" name="email" id="update-email"><br><br>
+          
+          <label>FirstName</label><br>
+          <input type="text" name="firstName" id="update-first-name"><br><br>
+
+          <label>LastName</label><br>
+          <input type="text" name="lastName" id="update-last-name"><br><br>
+
+          <label>Phone</label><br>
+          <input type="number" name="phone" id="update-phone"><br><br>
+
+          <button type="submit" id="update-button">Submit</button><br>
+      </form>
+      <div id="update-message"></div>
+    </div>
     </div>
       
+    
     <!-- Link JavaScript file -->
     <script src="main.js"></script>
   </body>
